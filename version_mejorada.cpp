@@ -21,7 +21,6 @@ void insertarInicio(Nodo*& head, Nodo*& tail, int valor) {
     }
 }
 
-
 void insertarFinal(Nodo*& head, Nodo*& tail, int valor) {
     Nodo* nuevo = new Nodo;
     nuevo->dato = valor;
@@ -53,7 +52,6 @@ void mostrarAdelante(Nodo* head) {
     cout << "NULL\n";
 }
 
-
 void mostrarAtras(Nodo* tail) {
     if (tail == NULL) {
         cout << "Lista vacia\n";
@@ -71,7 +69,6 @@ void mostrarAtras(Nodo* tail) {
     cout << "NULL\n";
 }
 
-
 bool buscar(Nodo* head, int valor) {
     Nodo* temp = head;
 
@@ -84,7 +81,6 @@ bool buscar(Nodo* head, int valor) {
 
     return false;
 }
-
 
 void eliminar(Nodo*& head, Nodo*& tail, int valor) {
     if (head == NULL) {
@@ -103,21 +99,17 @@ void eliminar(Nodo*& head, Nodo*& tail, int valor) {
         return;
     }
 
- 
     if (head == tail) {
         head = tail = NULL;
     }
-
     else if (actual == head) {
         head = actual->siguiente;
         head->anterior = NULL;
     }
-
     else if (actual == tail) {
         tail = actual->anterior;
         tail->siguiente = NULL;
     }
-
     else {
         actual->anterior->siguiente = actual->siguiente;
         actual->siguiente->anterior = actual->anterior;
@@ -126,7 +118,6 @@ void eliminar(Nodo*& head, Nodo*& tail, int valor) {
     delete actual;
     cout << "Nodo eliminado correctamente\n";
 }
-
 
 int contarNodos(Nodo* head) {
     int contador = 0;
